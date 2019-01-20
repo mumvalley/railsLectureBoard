@@ -15,13 +15,13 @@
   <div class="p-comment_listTitle">コメント</div>
   <%= render @board.comments %> <!-- 繰り返し表示される -->
 </div>
-<%= render :partial => 'comment_form', locals: { comment: @comment } %>
+<%= render :partial => 'comments/form', locals: { comment: @comment } %>
 
 
 <!-- テスト -->
-<div class="card">
+<!-- <div class="card">
   <p></br></p>
 <h3>名前:<%= @board.name %></h3>
 <h4>タイトル:<%= @board.title %></h4>
 <p class="card-text">本文:<%= simple_format(@board.body) %></p>
-</div>
+</div> -->
