@@ -1,0 +1,27 @@
+<div class="d-flex align-items-center mt-4 mb-4">
+  <div class="ml-auto boards__linkBox">
+    <%= link_to '一覧', boards_path, class: 'btn btn-outline-dark' %>
+    <%= link_to '編集', edit_board_path, class: 'btn btn-outline-dark' %>
+  </div>
+</div>
+
+<% if flash[:notice] %>
+<div class="alert alert-primary"><%= flash[:notice] %></div>
+<% end %>
+<!-- パーシャルから呼び出し -->
+<%= render :partial => 'board', :locals => { board: @board } %>
+
+<div class="p-comment__list">
+  <div class="p-comment_listTitle">コメント</div>
+  <%= render @board.comments %> <!-- 繰り返し表示される -->
+</div>
+<%= render :partial => 'comment_form', locals: { comment: @comment } %>
+
+
+<!-- テスト -->
+<div class="card">
+  <p></br></p>
+<h3>名前:<%= @board.name %></h3>
+<h4>タイトル:<%= @board.title %></h4>
+<p class="card-text">本文:<%= simple_format(@board.body) %></p>
+</div>
