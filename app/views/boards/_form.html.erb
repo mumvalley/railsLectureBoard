@@ -1,7 +1,7 @@
 <!-- エラーパーシャル -->
 <%= render 'shared/error_messages' %>
 <!-- フォーム -->
-<%= form_for board do |f| %>
+<%= form_with model: board do |f| %>
   <div class="form-group">
     <%= f.label :name, 'なまえ' %>
     <%= f.text_field :name, class: 'form-control' %>
